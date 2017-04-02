@@ -7,6 +7,7 @@
   "aliases:main": "aliases.js",
   "dev:main": "dist/preact.dev.js",
   "minified:main": "dist/preact.min.js",
+  "types": "dist/preact.d.ts",
   "scripts": {
     "clean": "rimraf dist/ aliases.js aliases.js.map  devtools.js devtools.js.map",
     "copy-flow-definition": "copyfiles -f src/preact.js.flow dist",
