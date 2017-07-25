@@ -186,7 +186,9 @@ describe('Components', () => {
 
 			constructor(props) {
 				super(props);
-				this.state.alt = false;
+				this.state = {
+					alt: false
+				};
 			}
 
 			render(_, {alt}) {
@@ -204,7 +206,9 @@ describe('Components', () => {
 
 			constructor(props) {
 				super(props);
-				this.state.alt = false;
+				this.state = {
+					alt: false
+				};
 			}
 
 			render(_, {alt}) {

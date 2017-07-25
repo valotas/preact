@@ -410,7 +410,9 @@ describe('render()', () => {
 		class Thing extends Component {
 			constructor(props, context) {
 				super(props, context);
-				this.state.html = this.props.html;
+				this.state = {
+					html: this.props.html
+				};
 			}
 			render(props, { html }) {
 				return html ? <div dangerouslySetInnerHTML={{ __html: html }} /> : <div />;
