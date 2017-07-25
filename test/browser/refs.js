@@ -276,7 +276,7 @@ describe('refs', () => {
 			}
 			handleMount(){}
 			render(_, { show }) {
-				if (!show) return <div id="div" ref={this.handleMount}></div>;
+				if (!show) return <div id="div" ref={this.handleMount} />;
 				return <span id="span" ref={this.handleMount}>some test content</span>;
 			}
 		}
@@ -312,7 +312,7 @@ describe('refs', () => {
 
 		class Wrapper {
 			render() {
-				return <div></div>;
+				return <div />;
 			}
 		}
 

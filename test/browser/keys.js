@@ -65,7 +65,7 @@ describe('keys', () => {
 		class BusyIndicator extends Component {
 			render({ children, busy }) {
 				return <div class={busy ? "busy" : ""}>
-					{ children && children.length ? children : <div class="busy-placeholder"></div> }
+					{ children && children.length ? children : <div class="busy-placeholder" /> }
 					<div class="indicator">
 						<div>indicator</div>
 						<div>indicator</div>
