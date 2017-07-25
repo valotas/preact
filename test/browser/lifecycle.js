@@ -75,10 +75,10 @@ describe('Lifecycle methods', () => {
 		it('should be called on new state', () => {
 			let doRender;
 			class ReceivePropsComponent extends Component {
-				componentWillUpdate() {}
 				componentDidMount() {
 					doRender = () => this.setState({ i: this.state.i + 1 });
 				}
+				componentWillUpdate() {}
 				render() {
 					return <div />;
 				}
@@ -192,10 +192,6 @@ describe('Lifecycle methods', () => {
 				}
 			}
 			class Inner extends Component {
-				componentDidUpdate() {
-					expect(Inner.prototype.componentWillReceiveProps).to.have.been.called;
-					expect(Inner.prototype.componentWillUpdate).to.have.been.called;
-				}
 				componentWillReceiveProps() {
 					expect(Inner.prototype.componentWillUpdate).not.to.have.been.called;
 					expect(Inner.prototype.componentDidUpdate).not.to.have.been.called;
@@ -203,6 +199,10 @@ describe('Lifecycle methods', () => {
 				componentWillUpdate() {
 					expect(Inner.prototype.componentWillReceiveProps).to.have.been.called;
 					expect(Inner.prototype.componentDidUpdate).not.to.have.been.called;
+				}
+				componentDidUpdate() {
+					expect(Inner.prototype.componentWillReceiveProps).to.have.been.called;
+					expect(Inner.prototype.componentWillUpdate).to.have.been.called;
 				}
 				render() {
 					return <div />;
@@ -274,10 +274,10 @@ describe('Lifecycle methods', () => {
 
 		class LifecycleTestComponent extends Component {
 			constructor(p, c) { super(p, c); this._constructor(); }
-			_constructor() {}
 			componentWillMount() {}
 			componentDidMount() {}
 			componentWillUnmount() {}
+			_constructor() {}
 			render() { return <div />; }
 		}
 
@@ -362,9 +362,9 @@ describe('Lifecycle methods', () => {
 			}
 
 			class Inner extends Component {
-				shouldComponentUpdate(){ return false; }
 				componentWillMount() {}
 				componentDidMount() {}
+				shouldComponentUpdate(){ return false; }
 				componentWillUnmount() {}
 				render() {
 					return <div />;

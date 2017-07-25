@@ -40,8 +40,8 @@ describe('context', () => {
 			// 	super();
 			// 	inner = this;
 			// }
-			shouldComponentUpdate() { return true; }
 			componentWillReceiveProps() {}
+			shouldComponentUpdate() { return true; }
 			componentWillUpdate() {}
 			componentDidUpdate() {}
 			render(props, state, context) {
@@ -99,8 +99,8 @@ describe('context', () => {
 		sinon.spy(Outer.prototype, 'getChildContext');
 
 		class Inner extends Component {
-			shouldComponentUpdate() { return true; }
 			componentWillReceiveProps() {}
+			shouldComponentUpdate() { return true; }
 			componentWillUpdate() {}
 			componentDidUpdate() {}
 			render(props, state, context) {

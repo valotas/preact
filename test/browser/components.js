@@ -409,10 +409,10 @@ describe('Components', () => {
 					super();
 					this._constructor(...args);
 				}
-				_constructor() {}
 				componentWillMount() {}
 				componentDidMount() {}
 				componentWillUnmount() {}
+				_constructor() {}
 				render(props) {
 					return <div j={ ++j } {...props}>inner</div>;
 				}
@@ -544,9 +544,9 @@ describe('Components', () => {
 						child: this.props.child
 					};
 				}
-				componentWillUnmount(){}
 				componentWillMount(){}
 				componentDidMount(){}
+				componentWillUnmount(){}
 				render(_, { child:C }) {
 					return <C />;
 				}
@@ -554,9 +554,9 @@ describe('Components', () => {
 			spyAll(Outer.prototype);
 
 			class Inner extends Component {
-				componentWillUnmount(){}
 				componentWillMount(){}
 				componentDidMount(){}
+				componentWillUnmount(){}
 				render() {
 					return h('element'+(++counter));
 				}
@@ -568,9 +568,9 @@ describe('Components', () => {
 					super(props, context);
 					inner2 = this;
 				}
-				componentWillUnmount(){}
 				componentWillMount(){}
 				componentDidMount(){}
+				componentWillUnmount(){}
 				render() {
 					return h('element'+(++counter));
 				}

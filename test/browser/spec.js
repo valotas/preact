@@ -58,8 +58,8 @@ describe('Component spec', () => {
 					super(props, context);
 					this.ctor(props, context);
 				}
-				ctor(){}
 				componentWillReceiveProps() {}
+				ctor(){}
 				render() {
 					return <div />;
 				}
@@ -129,10 +129,10 @@ describe('Component spec', () => {
 		it('should force a rerender', () => {
 			let forceUpdate;
 			class ForceUpdateComponent extends Component {
-				componentWillUpdate() {}
 				componentDidMount() {
 					forceUpdate = () => this.forceUpdate();
 				}
+				componentWillUpdate() {}
 				render() {
 					return <div />;
 				}
